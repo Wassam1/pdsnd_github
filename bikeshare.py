@@ -229,9 +229,9 @@ def trip_duration_stats(df):
     # TO DO: display total travel time
     # Trip duration is displayed in seconds. For any meaningful data we will display in hours,
     # minutes and seconds using 'divmod'
-    tot_duration = df['Trip Duration'].sum()
+    total_duration = df['Trip Duration'].sum()
     
-    mins, secs = divmod(tot_duration, 60)
+    mins, secs = divmod(total_duration, 60)
     
     hrs, mins = divmod(mins, 60)
     
