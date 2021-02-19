@@ -188,9 +188,9 @@ def station_stats(df):
 
     # TO DO: display most commonly used start station
     # 'mode' method is used for the most common start station
-    strt_station = df['Start Station'].mode()[0]
+    Start_station = df['Start Station'].mode()[0]
     
-    print('The most common start station is: {}.\n'.format(strt_station))
+    print('The most common start station is: {}.\n'.format(Start_station))
 
     # TO DO: display most commonly used end station
     # 'mode' method is used for the most common end station
