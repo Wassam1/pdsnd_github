@@ -17,7 +17,7 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!\n')
     
-    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    #get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     
     print('Please select a city from the following: 1-chicago 2-new york city 3-washington\n')
     print('Please make sure your input is in lower case matching the options above\n')
@@ -35,7 +35,7 @@ def get_filters():
     
     print('\nYou have selected "{}" as your choice.\n'.format(city.title())) 
 
-    # TO DO: get user input for month (all, january, february, ... , june)
+    #get user input for month (all, january, february, ... , june)
     Months = {'january': 1,
               'february': 2,
               'march': 3,
@@ -62,7 +62,7 @@ def get_filters():
     print('\nYou have selected "{}" for your month filter.'.format(month))
         
 
-    # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
+    #get user input for day of week (all, monday, tuesday, ... sunday)
     
     Days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'all']
             
@@ -145,21 +145,21 @@ def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time() #capture start time for computation duration
 
-    # TO DO: display the most common month
+    #display the most common month
     # 'mode' method is used to display most common month (from practice questions)
     common_month = df['month'].mode()[0]
     
     print('The most common month is: {}\n'.format(common_month))
 
 
-    # TO DO: display the most common day of week
+    #display the most common day of week
     #'mode' method is used to display most common day (from practice questions)
     common_day = df['day_of_week'].mode()[0]
     
     print('The most common day is: {}\n'.format(common_day))
 
 
-    # TO DO: display the most common start hour
+    #display the most common start hour
     #first need to creat an hour column, then use mode to find most common hour
     df['hour'] = df['Start Time'].dt.hour
     
@@ -186,19 +186,19 @@ def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()#capture start time for computation duration
 
-    # TO DO: display most commonly used start station
+    #display most commonly used start station
     # 'mode' method is used for the most common start station
     strt_station = df['Start Station'].mode()[0]
     
     print('The most common start station is: {}.\n'.format(strt_station))
 
-    # TO DO: display most commonly used end station
+    #display most commonly used end station
     # 'mode' method is used for the most common end station
     end_station = df['End Station'].mode()[0]
     
     print('The most common end station is: {}.\n'.format(end_station))
 
-    # TO DO: display most frequent combination of start station and end station trip
+    #display most frequent combination of start station and end station trip
     # 'str.cat' will be used to concat all combos of start-end into a new column then find
     # the most popular combo with 'mode'
     df['Start-End'] = df['Start Station'].str.cat(df['End Station'], sep = ' - ')
@@ -226,7 +226,7 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()#computation duration start time
 
-    # TO DO: display total travel time
+    #display total travel time
     # Trip duration is displayed in seconds. For any meaningful data we will display in hours,
     # minutes and seconds using 'divmod'
     tot_duration = df['Trip Duration'].sum()
@@ -238,7 +238,7 @@ def trip_duration_stats(df):
     print('Total travel time is {} hrs, {} mins, {} secs.\n'.format(hrs, mins, secs))
     
 
-    # TO DO: display mean travel time
+    #display mean travel time
     #for mean we use'mean' method then 'divmod' again to get average trips length in minutes
     avg_duration = df['Trip Duration'].mean()
     
@@ -268,14 +268,14 @@ def user_stats(df):
     print('\nCalculating User Stats...\n')
     start_time = time.time()#capture computation duration start time
 
-    # TO DO: Display counts of user types
+    #Display counts of user types
     # here we use 'value_counts' method as per example
     user_type = df['User Type'].value_counts()
     
     print('Counts of User Types: \n{}'.format(user_type))
 
 
-    # TO DO: Display counts of gender
+    # Display counts of gender
     # to display genders we will apply a try clause as
     # some dataframe will not have a gender feed
     try:
@@ -286,7 +286,7 @@ def user_stats(df):
         print('Genders were not provided by users\n')
 
 
-    # TO DO: Display earliest, most recent, and most common year of birth
+    # Display earliest, most recent, and most common year of birth
     # we will need another try clause for birthdate as not all dataframes will have birth dates
     try:
         min_year = int(df['Birth Year'].min())
