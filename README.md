@@ -17,6 +17,7 @@ The **Required** files for this project are:
 * washington.csv
 * chicago.csv
 * new_york_city.csv
+*Note:* The CSV files are not included in this repo
 
 ### Credits
 The following resources have been utilized:
